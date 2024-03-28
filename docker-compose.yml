@@ -1,0 +1,14 @@
+version: '3'
+services:
+  betaflight:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./betaflight:/opt/betaflight
+    environment:
+      - TARGET=STM32F405
+      - OPTIONS=
+    command: tail -f /dev/null
+    working_dir: /opt/betaflight
+    #user: 1000:1000
